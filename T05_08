@@ -1,0 +1,53 @@
+class Car(var model: String, var speed: Int, var gas: Int) {
+
+    fun name(): String {
+        return model
+    }
+    
+    fun getCarSpeed(): Int {
+        return speed
+    }
+
+    fun increaseSpeed() {
+        speed += 65
+    }
+    
+    fun decreaseSpeed(){
+        speed -= 35
+    }
+    
+
+    fun addGas(newGas: Int){
+        gas += newGas
+    }
+}
+
+fun main() {
+    var car = Car("Intel Car", 30, 50)
+    
+    println("모델명: ${car.name()}")
+
+    println("=".repeat(20))
+    
+    println("-> 현재 속도: ${car.getCarSpeed()}km")
+    
+    println("=".repeat(20))
+
+    car.increaseSpeed()
+    println("[속도 증가 시킴]")
+
+    println("-> 현재 속도: ${car.getCarSpeed()}km")
+    
+    println("어린이 보호 구역 진입(제한 60km) == 감소하세요!!!")
+    
+    car.decreaseSpeed()
+    println("[속도 감소 시킴]")
+    println("-> 현재 속도: ${car.getCarSpeed()}km")
+    
+    println("=".repeat(20))
+
+    car.addGas(20)
+    println("[연료 추가]")
+
+    print("-> 현재 연료량: ${car.gas}L")
+}
