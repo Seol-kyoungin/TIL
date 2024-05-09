@@ -40,6 +40,31 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+@Preview(showBackground = true, widthDp = 300, heightDp = 400)
+@Composable
+fun GreetingPreview() {
+
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        // 배경 이미지 추가
+        Image(
+            painter = painterResource(id = R.drawable.green),
+            contentDescription = null,
+            contentScale = ContentScale.FillBounds,
+            modifier = Modifier.fillMaxSize(),
+        )
+
+        LoginTheme {
+            LeaderPersonalityProfile()
+
+        }
+    }
+}
+
+
 @Composable
 fun LeaderPersonalityProfile() {
     Column(
@@ -77,35 +102,11 @@ fun LeaderPersonalityProfile() {
             modifier = Modifier
                 .fillMaxWidth(1f)
         )
-    }
-}
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "이상 설경인의 MBTI였습니다!",
 
-@Composable
-fun Greeting(name: String, alignment: Alignment) {
-    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = alignment) {
-        Text(text = name)
-    }
-}
-
-@Preview(showBackground = true, widthDp = 300, heightDp = 400)
-@Composable
-fun GreetingPreview() {
-
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        // 배경 이미지 추가
-        Image(
-            painter = painterResource(id = R.drawable.green),
-            contentDescription = null,
-            contentScale = ContentScale.FillBounds,
-            modifier = Modifier.fillMaxSize(),
+            fontSize = 8.sp
         )
-
-        LoginTheme {
-            LeaderPersonalityProfile()
-
-        }
     }
 }
