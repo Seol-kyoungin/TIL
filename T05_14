@@ -1,0 +1,62 @@
+package com.example.mbti
+
+fun main() {
+    val analyst = Analysts("John", "Software Engineer")
+    val diplomat = Diplomats("Emily", "Diplomat")
+    val sentinel = Sentinels("Michael", "Manager")
+    val explorer = Explorers("Sophia", "Explorer")
+
+    analyst.introduce()
+    analyst.an()
+
+    diplomat.introduce()
+    diplomat.di()
+
+    sentinel.introduce()
+    sentinel.se()
+
+    explorer.introduce()
+    explorer.ex()
+}
+
+open class Mbti(var name: String, var job: String) {
+
+    fun introduce() {
+
+        println("저는 ${name}이고, 직업은 ${job} 입니다")
+
+    }
+}
+
+//분석가
+class Analysts(name: String, job: String) : Mbti("분석가", job) {
+    fun an() {
+        println("INTJ / INTP / ENTJ / ENTP")
+    }
+}
+
+//외교관
+class Diplomats(name: String, job: String) : Mbti("외교관", job) {
+    fun di() {
+        println("INFJ / INFP / ENFJ / ENFP")
+    }
+}
+
+//관리자
+class Sentinels(name: String, job: String) : Mbti("관리자", job) {
+    fun se() {
+        println("ISTJ / ISFJ / ESTJ / ENFJ")
+    }
+}
+
+//탐험가
+class Explorers(name: String, job: String) : Mbti("탐험가", job) {
+    fun ex() {
+        println("ISTP / ISFP / ESTP / ESFP")
+    }
+}
+
+
+
+
+
